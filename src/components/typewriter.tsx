@@ -29,6 +29,7 @@ export default function TypeWriter({
             setCursorVisible((prev) => !prev);
         }, 500);
 
+        console.log("Cursor blinking started");
         return () => clearInterval(interval);
     }, []);
 
