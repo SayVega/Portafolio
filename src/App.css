@@ -17,6 +17,23 @@
   }
 }
 
+pre {
+  font-family: monospace;
+  line-height: 0.8;
+  opacity: .35;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fire {
+        display: none;
+    }
+}
+
+.home {
+    position: relative;
+    min-height: 100vh;
+}
+
 .hero {
   position: relative;
 

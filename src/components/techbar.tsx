@@ -27,7 +27,6 @@ import {
     SiOllama,
 } from "react-icons/si";
 
-
 export const languages = [
     { name: "C", Icon: SiC },
     { name: "C++", Icon: SiCplusplus },
@@ -57,8 +56,7 @@ export const tools = [
     { name: "Ollama", Icon: SiOllama },
 ];
 
-
-export default function TechCarousel({
+export default function TechBar({
     items,
 }: {
     items: typeof languages;
@@ -70,12 +68,11 @@ export default function TechCarousel({
                     <Icon
                         key={name}
                         title={name}
-                        className="
-                            text-4xl
+                        className="text-4xl
                             transition-all
                             duration-300
-                            hover:scale-110
-                        "
+                            hover:scale-105
+                            text-red-600"
                     />
                 ))}
             </div>

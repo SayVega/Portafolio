@@ -1,13 +1,16 @@
 import AboutMe from "../components/aboutme";
-import TechCarousel, { languages, tools} from "../components/techcarousel";
+import TechBar, { languages, tools } from "../components/techbar";
+import FireBackground from "../components/firebg";
+import "../components/firebg.css";
 
 function Home() {
     return <div>
         <AboutMe />
         <h3 className="text-2xl font-display text-center">Languages</h3>
-        <TechCarousel items={languages} />
+        <TechBar items={languages} />
         <h3 className="text-2xl font-display text-center">Tools</h3>
-        <TechCarousel items={tools} />
+        <TechBar items={tools} />
+        <FireBackground />
     </div>
 }
 

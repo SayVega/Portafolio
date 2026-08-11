@@ -13,7 +13,10 @@ export default function AboutMe() {
                     </h1>
 
                     <h2 className="mt-4 font-mono text-3xl text-zinc-300 pl-10">
-                        <TypeWriter text="> Software Engineer" />
+                        <TypeWriter text="> Software Engineer"
+                        minSpeed = {50}
+                        maxSpeed = {70}
+                        />
                     </h2>
 
                     <h2 className="mt-4 font-mono text-3xl text-zinc-300 pl-10">
