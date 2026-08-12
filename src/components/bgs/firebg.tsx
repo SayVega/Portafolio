@@ -79,67 +79,21 @@ export default function FireBackground() {
             flame: Flame,
             time: number
         ) {
-            /*
-             * Variación de altura.
-             *
-             * La llama siempre conserva su altura
-             * máxima, pero podemos ocultar los
-             * últimos 3 caracteres.
-             */
-            const tipWave =
-                (
-                    Math.sin(
-                        time * 0.0007
-                    ) + 1
-                ) / 2;
+            const tipWave = (Math.sin(time * 0.0007) + 1) / 2;
 
-            const hiddenChars =
-                Math.floor(tipWave * 4);
+            const hiddenChars = Math.floor(tipWave * 4);
 
-            const visibleHeight =
-                flame.height - hiddenChars;
+            const visibleHeight = flame.height - hiddenChars;
 
-            for (
-                let y = 0;
-                y < visibleHeight;
-                y++
-            ) {
-                const progress =
-                    y / (flame.height - 1);
+            for (let y = 0; y < visibleHeight; y++) {
+                const progress = y / (flame.height - 1);
 
-                /*
-                 * Onda principal.
-                 */
-                const wave1 = Math.sin(
-                    time * flame.wave1.speed +
-                    flame.wave1.phase +
-                    progress * flame.wave1.frequency
-                );
+                const wave1 = Math.sin(time * flame.wave1.speed + flame.wave1.phase + progress * flame.wave1.frequency);
 
-                /*
-                 * Onda secundaria.
-                 */
-                const wave2 = Math.sin(
-                    time * flame.wave2.speed +
-                    flame.wave2.phase +
-                    progress * flame.wave2.frequency
-                );
+                const wave2 = Math.sin(time * flame.wave2.speed + flame.wave2.phase + progress * flame.wave2.frequency);
+                                 
+                const wave3 = Math.sin(time * tertiaryWave.speed + tertiaryWave.phase + progress * tertiaryWave.frequency);
 
-                /*
-                 * Onda terciaria.
-                 *
-                 * Los valores son exactamente iguales
-                 * para ambas llamas.
-                 */
-                const wave3 = Math.sin(
-                    time * tertiaryWave.speed +
-                    tertiaryWave.phase +
-                    progress * tertiaryWave.frequency
-                );
-
-                /*
-                 * Combinamos las tres ondas.
-                 */
                 const rawWave =
                     wave1 * flame.wave1.amplitude +
                     wave2 * flame.wave2.amplitude +
@@ -153,138 +107,53 @@ export default function FireBackground() {
                 const normalizedWave =
                     rawWave / totalAmplitude;
 
-                /*
-                 * Envelope de movimiento.
-                 *
-                 * La base tiene poca amplitud.
-                 * La parte media tiene mucha.
-                 * La punta conserva un pequeño
-                 * movimiento en lugar de quedar
-                 * completamente fija.
-                 */
-                const waveEnvelope =
-                    0.15 +
-                    0.85 *
-                        Math.sin(
-                            Math.pow(progress, 0.7) *
-                            Math.PI
-                        );
+                const waveEnvelope = 0.15 + 0.85 * Math.sin(Math.pow(progress, 0.7) * Math.PI);
 
-                /*
-                 * Movimiento horizontal.
-                 */
-                const wave =
-                    normalizedWave *
-                    waveEnvelope;
+                const wave = normalizedWave * waveEnvelope;
 
-                const center =
-                    flame.x +
-                    wave * totalAmplitude;
+                const center = flame.x + wave * totalAmplitude;
 
-                /*
-                 * La llama se estrecha hacia arriba.
-                 *
-                 * Aumentamos ligeramente la persistencia
-                 * del ancho para que la base sea más ancha.
-                 */
-                const taper =
-                    1 -
-                    Math.pow(progress, 1.5);
+                const taper = 1 - Math.pow(progress, 1.5);
 
-                /*
-                 * La onda determina hacia qué lado
-                 * se concentra el ancho.
-                 */
-                const side =
-                    (normalizedWave + 1) / 2;
+                const side = (normalizedWave + 1) / 2;
 
-                const leftWidth =
-                    flame.width *
-                    taper *
-                    (0.25 + (1 - side) * 0.75);
+                const leftWidth = flame.width * taper * (0.25 + (1 - side) * 0.75);
 
-                const rightWidth =
-                    flame.width *
-                    taper *
-                    (0.25 + side * 0.75);
+                const rightWidth = flame.width * taper * (0.25 + side * 0.75);
 
-                const py =
-                    height - 1 - y;
+                const py = height - 1 - y;
 
-                const start =
-                    Math.floor(
-                        center - leftWidth
-                    );
+                const start = Math.floor(center - leftWidth);
 
-                const end =
-                    Math.ceil(
-                        center + rightWidth
-                    );
+                const end = Math.ceil(center + rightWidth);
 
-                for (
-                    let x = start;
-                    x <= end;
-                    x++
-                ) {
-                    if (
-                        x < 0 ||
-                        x >= width ||
-                        py < 0 ||
-                        py >= height
-                    ) {
+                for (let x = start; x <= end; x++) {
+                    if ( x < 0 || x >= width || py < 0 || py >= height) {
                         continue;
                     }
 
                     let distance;
 
-                    if (x < center) {
-                        distance =
-                            (center - x) /
-                            Math.max(
-                                leftWidth,
-                                1
-                            );
+                    if (x < center) { 
+                        distance = (center - x) / Math.max(leftWidth, 1);
                     } else {
-                        distance =
-                            (x - center) /
-                            Math.max(
-                                rightWidth,
-                                1
-                            );
+                        distance = (x - center) / Math.max(rightWidth,1);
                     }
 
-                    /*
-                     * Intensidad.
-                     */
-                    let intensity =
-                        9 -
-                        distance * 5 -
-                        progress * 5;
+                    let intensity = 9 - distance * 5 - progress * 5;
 
-                    intensity = Math.max(
-                        0,
-                        Math.min(9, intensity)
-                    );
+                    intensity = Math.max(0, Math.min(9, intensity));
 
-                    const index =
-                        py * width + x;
+                    const index = py * width + x;
 
-                    fire[index] = Math.max(
-                        fire[index],
-                        Math.floor(intensity)
-                    );
+                    fire[index] = Math.max(fire[index], Math.floor(intensity));
                 }
             }
         }
 
         function render(time: number) {
-            if (
-                time - lastFrame <
-                frameDelay
-            ) {
-                animationId =
-                    requestAnimationFrame(render);
-
+            if (time - lastFrame < frameDelay) {
+                animationId = requestAnimationFrame(render);
                 return;
             }
 
@@ -300,18 +169,13 @@ export default function FireBackground() {
 
             for (let y = 0; y < height; y++) {
                 for (let x = 0; x < width; x++) {
-                    output +=
-                        chars[
-                            fire[y * width + x]
-                        ];
+                    output += chars[fire[y * width + x]];
                 }
-
                 output += "\n";
             }
 
             if (ref.current) {
-                ref.current.textContent =
-                    output;
+                ref.current.textContent = output;
             }
 
             animationId =

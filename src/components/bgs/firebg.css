@@ -21,13 +21,14 @@
     text-rendering: optimizeSpeed;
 
     color: #111;
+    
     text-shadow: 
-      0 -2px 8px rgba(255, 204, 0, 0.2), 
-        0 -6px 12px #ff3700, 
-        -3px -14px 25px #e62200, 
-        3px -25px 35px #cc1100, 
-        -2px -40px 55px #990000, 
-        0 -60px 80px #4a0000;
+    0 -2px 8px rgba(255, 204, 0, 0.2), 
+    0 -6px 12px #ff3700, 
+    -3px -14px 25px #e62200, 
+    3px -25px 35px #cc1100, 
+    -2px -40px 55px #990000, 
+    0 -60px 80px #4a0000;
 }
 
 @media (prefers-reduced-motion: reduce) {
