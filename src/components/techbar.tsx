@@ -10,9 +10,6 @@ import {
     SiSolidity,
     SiPostgresql,
     SiElixir,
-} from "react-icons/si";
-
-import {
     SiReact,
     SiTailwindcss,
     SiQt,
@@ -62,21 +59,16 @@ export default function TechBar({
     items: typeof languages;
 }) {
     return (
-        <section className="my-2 overflow-hidden">
-            <div className="flex items-center justify-center gap-10 py-3">
+        <section className="my-4 w-full px-4 max-w-[90%] max-[500px]:max-w-[95%] lg:max-w-[60%] mx-auto">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 min-[1700px]:gap-14 py-3">
                 {items.map(({ name, Icon }) => (
                     <Icon
                         key={name}
                         title={name}
-                        className="text-4xl
-                            transition-all
-                            duration-300
-                            hover:scale-105
-                            text-red-600"
+                        className="text-2xl sm:text-3xl md:text-4xl min-[1700px]:text-6xl transition-all duration-300 hover:scale-110 text-[#660000]"
                     />
                 ))}
             </div>
         </section>
     );
 }
-

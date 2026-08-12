@@ -190,10 +190,8 @@ export default function FireBackground() {
     }, []);
 
     return (
-        <pre
-            ref={ref}
-            className="fire"
-            aria-hidden="true"
-        />
+        <div className="fire" aria-hidden="true">
+            <pre ref={ref} className="fire-content" />
+        </div>
     );
 }

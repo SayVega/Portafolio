@@ -1,7 +1,7 @@
 import AboutMe from "../components/aboutme";
 import TechBar, { languages, tools } from "../components/techbar";
-import FireBackground from "../components/bgs/firebg";
-import "../components/bgs/firebg.css";
+import FireBackground from "./bgs/firebg";
+import "../pages/bgs/firebg.css";
 
 function Home() {
     return <div>

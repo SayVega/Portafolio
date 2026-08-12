@@ -6,22 +6,33 @@
     height: 100vh;
     margin: 0;
     padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     text-align: center;
     overflow: hidden;
     pointer-events: none;
+    
     z-index: -1;
+
     font-family: "IBM Plex Mono";
     font-size: clamp(10px, 1.35vw, 18px);
     line-height: 0.85;
     letter-spacing: 1px;
     user-select: none;
+    white-space: pre;
+    user-select: none;    
 
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: unset;
     text-rendering: optimizeSpeed;
+    transform-origin: center center;
+    transform: scale(min(calc(100vw / 850), calc(100vh / 420)));
 
     color: #111;
-    
+
     text-shadow: 
     0 -2px 8px rgba(255, 204, 0, 0.2), 
     0 -6px 12px #ff3700, 
@@ -36,3 +47,4 @@
         display: none;
     }
 }
+
