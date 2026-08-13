@@ -23,7 +23,7 @@
   letter-spacing: 0.18px;
   color-scheme: light dark;
   color: var(--text);
-  background: var(--bg);
+  background: var(--bg-projects);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -38,7 +38,7 @@
   :root {
     --text: #9ca3af;
     --text-h: #f3f4f6;
-    --bg: linear-gradient(180deg, #000000, #0f0305);
+    --bg-projects: linear-gradient(180deg, #000000, #1c0333);
     --border: #2e303a;
     --code-bg: #1f2028;
     --accent: #c084fc;

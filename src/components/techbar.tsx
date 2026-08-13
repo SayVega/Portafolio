@@ -59,7 +59,7 @@ export default function TechBar({
     items: typeof languages;
 }) {
     return (
-        <section className="my-4 w-full px-4 max-w-[90%] max-[500px]:max-w-[95%] lg:max-w-[60%] mx-auto">
+        <section className="my-4 w-full px-4 max-w-[90%] max-[500px]:max-w-[95%] lg:max-w-[65%] mx-auto">
             <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 min-[1700px]:gap-14 py-3">
                 {items.map(({ name, Icon }) => (
                     <Icon
