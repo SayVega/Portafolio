@@ -2,8 +2,8 @@ import TypeWriter from "./typewriter";
 
 export default function AboutMe() {
     return (
-        <section className="flex items-center justify-center">
-            <div className="flex flex-col lg:flex-row items-center w-full max-[500px]:max-w-[95%] max-w-[65%] lg:max-w-[88%] xl:max-w-[70%] 2xl:max-w-[60%] rounded-xl bg-black shadow-2xl p-4 sm:p-8 lg:p-10 xl:p-12 transition-all duration-300">
+        <section className="flex items-center justify-center ">
+            <div className="flex flex-col lg:flex-row items-center w-full max-[500px]:max-w-[95%] max-w-[65%] lg:max-w-[88%] xl:max-w-[70%] 2xl:max-w-[60%] rounded-xl bg-black shadow-2xl p-4 sm:p-8 lg:p-10 xl:p-12 transition-all duration-300 bg-black/20">
 
                 <div className="flex flex-col justify-center flex-1 w-full lg:w-3/5">
                     <h1 className="font-display text-3xl sm:text-5xl lg:text-4xl xl:text-6xl 2xl:text-7xl font-bold pb-1 lg:pb-3 text-white min-h-[40px] sm:min-h-[60px] lg:min-h-[52px] xl:min-h-[72px]">

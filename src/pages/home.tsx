@@ -4,14 +4,14 @@ import FireBackground from "./bgs/firebg";
 import "../pages/bgs/firebg.css";
 
 function Home() {
-    return <div>
+    return <main>
         <AboutMe />
         <h3 className="text-2xl font-display text-center">Languages</h3>
         <TechBar items={languages} />
         <h3 className="text-2xl font-display text-center">Tools</h3>
         <TechBar items={tools} />
         <FireBackground />
-    </div>
+    </main>
 }
 
 export default Home;
