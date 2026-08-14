@@ -38,7 +38,7 @@
   :root {
     --text: #9ca3af;
     --text-h: #f3f4f6;
-    --bg-projects: linear-gradient(180deg, #000000, #1c0333);
+    --bg-projects: linear-gradient(180deg, #000000, #140224);
     --border: #2e303a;
     --code-bg: #1f2028;
     --accent: #c084fc;
@@ -69,10 +69,8 @@ h2 {
 h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
-  margin: 32px 0;
   @media (max-width: 1024px) {
     font-size: 36px;
-    margin: 20px 0;
   }
 }
 h2 {
