@@ -1,0 +1,54 @@
+.plasma {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    overflow: hidden;
+    pointer-events: none;
+    
+    z-index: -1;
+
+    font-family: "IBM Plex Mono";
+    font-size: clamp(10px, 1.35vw, 18px);
+    line-height: 0.85;
+    letter-spacing: 1px;
+    user-select: none;
+    white-space: pre;
+    user-select: none;    
+
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+    text-rendering: optimizeSpeed;
+
+    color: #111;
+    background:  linear-gradient(180deg, #000000, #140224);
+
+    color: #111;
+
+    text-shadow:        
+        0 0 16px rgba(182, 168, 197, 0.25),
+        0 0 3px rgba(91, 35, 120, 0.55),
+        0 0 3px rgba(91, 35, 120, .55),
+        0 0 8px rgba(70, 20, 100, .35),
+        0 0 14px rgba(50, 10, 80, .2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .plasma {
+        display: none;
+    }
+}
+
+
+
+
+
