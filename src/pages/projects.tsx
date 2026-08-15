@@ -85,7 +85,7 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
           {placeholders.map((project) => (
-            <ProjectCard key={project.id} project={project} variant="default" />
+            <ProjectCard key={project.id} project={project}/>
           ))}
         </div>
       </section>
